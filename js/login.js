@@ -30,7 +30,7 @@ function register() {
             "password": password
         };
 
-        fetch("https://notifykaffepause.herokuapp.com/api/login", {
+        fetch("https://notifykaffepause.herokuapp.com/api/login/", {
             method: "PUT",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(data)
