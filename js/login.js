@@ -40,7 +40,7 @@ function register() {
                 console.log(data)
                 localStorage.setItem("cookie", JSON.stringify(data));
                 snackbar("Logged in!")
-                // Redirect user to index...
+                window.location.replace("../index.html");
             } else
                 snackbar("Account already exists, try another email")
         });
