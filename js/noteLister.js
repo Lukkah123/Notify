@@ -6,7 +6,7 @@ var selectedNote = null;
 var filterValue = null;
 
 async function fetchNotesFromUser() {
-  fetch("https://notifykaffepause.herokuapp.com/api/users/" + user, {
+  fetch("http://localhost:8080/api/users/" + user, {
     method: "GET",
     headers: { 'Content-Type': 'application/json' },
   }).then(async res => {
@@ -68,7 +68,7 @@ function setupAddNoteFunctionality() { // Sets up eventlistener for add note but
       lastChange: new Date()
     }
     jsonData = JSON.stringify(newNote)
-    fetch("https://notifykaffepause.herokuapp.com/api/users/" + user + '/addNote', {
+    fetch("http://localhost:8080/api/users/" + user + '/addNote', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -103,7 +103,7 @@ function setupDeleteNoteFunctionality() { // Delete button listener that deletes
   document.getElementById("deleteNoteButton").addEventListener('click', () => {
     console.log(selectedNote)
     if (confirm("Delete note with id: " + selectedNote.id)) {
-      fetch("https://notifykaffepause.herokuapp.com/api/notes/" + selectedNote.id, {
+      fetch("http://localhost:8080/api/notes/" + selectedNote.id, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
@@ -133,7 +133,7 @@ function setupUpdateNoteFunctionality() { // Updates the currently selected note
         lastChange: new Date()
       }
       jsonData = JSON.stringify(newNote)
-      fetch("https://notifykaffepause.herokuapp.com/api/notes/" + selectedNote.id, {
+      fetch("http://localhost:8080/api/notes/" + selectedNote.id, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -174,7 +174,7 @@ function setupLogoutButtonFunctionality() {
     };
     console.log(data)
     
-    fetch("https://notifykaffepause.herokuapp.com/api/login/", {
+    fetch("http://localhost:8080/api/login/", {
       method: "DELETE",
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -186,6 +186,12 @@ function setupLogoutButtonFunctionality() {
         console.log("Error")
     });
     
+  });
+}
+
+function setupStatisticsButtonFunctionality() {
+  document.getElementsByClassName("statistics__button")[0].addEventListener('click', () => {
+    window.location.replace("html/statistics.html")
   });
 }
 
@@ -205,3 +211,4 @@ setupUpdateNoteFunctionality();
 setupDeleteNoteFunctionality();
 setupFilterFunctionality();
 setupLogoutButtonFunctionality();
+setupStatisticsButtonFunctionality();
