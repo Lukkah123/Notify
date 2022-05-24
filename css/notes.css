@@ -1,32 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Lukkah123 
-pommee
-/
-NotifyFrontend
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-NotifyFrontend/css/notes.css
-@Fompe96
-Fompe96 Added buttons to redirect user to/from statistics page
-Latest commit c14cb19 2 days ago
- History
- 2 contributors
-@Fompe96@MRKazemi00
-215 lines (189 sloc)  3.18 KB
-   
 html,
 body {
   height: 100%;
@@ -242,16 +213,3 @@ background: #614d58;
   width: 100%;
   text-align: center;
 }
-© 2022 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
